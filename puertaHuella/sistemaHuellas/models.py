@@ -11,7 +11,8 @@ class Alumno(models.Model):
     mail=models.EmailField(max_length=30, blank=True)
 
 
-
+    def __str__(self):
+        return "{} {}".format(self.nombre, self.apellido)
 
 
 
