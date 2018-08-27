@@ -30,15 +30,19 @@ class Materia(models.Model):
 
 #hereda de Persona
 class Docente(models.Model):
-    dni=models.IntegerField(unique=True)
-    nombre=models.CharField(max_length=50)
-    apellido=models.CharField(max_length=50)
-    direccion=models.CharField(max_length=50)
-    fechaNac=models.DateField()
-    celular=models.CharField(max_length=20,blank=True)
-    mail=models.EmailField(max_length=30, blank=True)
-    categoria=models.CharField(max_length=50, blank=True)
-    imagen=models.ImageField(upload_to='images', null=True, default=None)
+   dni=models.IntegerField(unique=True)
+   nombre=models.CharField(max_length=50)
+   apellido=models.CharField(max_length=50)
+   direccion=models.CharField(max_length=50)
+   fechaNac=models.DateField()
+   celular=models.CharField(max_length=20,blank=True)
+   mail=models.EmailField(max_length=30, blank=True)
+   categoria=models.CharField(max_length=50, blank=True)
+   imagen=models.ImageField(upload_to='images', null=True, default=None)
+class Ingreso(models.Model):
+   numRegistro=models.IntegerField()
+   fecha=models.DateField()
+   activo=models.BooleanField(default=False)
 
 
     
