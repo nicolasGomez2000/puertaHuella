@@ -41,8 +41,8 @@ class Docente(models.Model):
    imagen=models.ImageField(upload_to='images', null=True, default=None)
 class Ingreso(models.Model):
    numRegistro=models.IntegerField()
-   fecha=models.DateField()
-   activo=models.BooleanField(default=False)
+   fecha=models.DateTimeField(auto_now=True)
+   activo=models.BooleanField(default=True)
 
 
     

@@ -11,4 +11,5 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
     url(r'^visor/$',visor),
     url(r'^admin/', include(admin.site.urls)),
+    #url(r'^login/$', login),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
