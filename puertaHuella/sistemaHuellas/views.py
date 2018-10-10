@@ -11,7 +11,6 @@ def visor(request):
     ingreso = Ingreso.objects.filter(activo=True).first()
     if ingreso:
         alumno = Alumno.objects.filter(id=ingreso.numRegistro).first()
-
     #alumnos = Alumno.objects.filter(dni=32434)
     #docente =  Docente.objects.filter(dni=1234)
     #docente = list(docente)
