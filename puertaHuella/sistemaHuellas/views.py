@@ -18,6 +18,7 @@ def visor(request):
     #alumnos = list(alumnos)#para asegurarse de ....
     #alumno = alumnos[0]
     #docente = docente[0]
+    #DETERMINAR SI ES ALUMNO O DOCENTE PARA MOSTRAR UNA U OTRA VISTA.
     src = '{}{}.{}'.format('\\media\\images\\', alumno.id, 'jpg')
-    return render(request,'holamundo.html',{'nombre':alumno.nombre, 'src':src})
+    return render(request,'visorAlumno.html',{'nombre':alumno.nombre, 'src':src})
 
