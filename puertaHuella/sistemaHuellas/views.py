@@ -9,15 +9,25 @@ from .models import Docente
 def visor(request):
     #alumno = Alumno.objects.filter(dni=32434).first()
     ingreso = Ingreso.objects.filter(activo=True).first()
+    persona=None
     if ingreso:
-        alumno = Alumno.objects.filter(id=ingreso.numRegistro).first()
+        persona = Alumno.objects.filter(numeroRegistro=ingreso.numRegistro).first()
+    if persona:
+        bienvenido = "alumno"
+    else:
+        persona = Docente.objects.filter(numeroRegistro=ingreso.numRegistro).first()
+        bienvenido = "docente"
+
     #alumnos = Alumno.objects.filter(dni=32434)
     #docente =  Docente.objects.filter(dni=1234)
     #docente = list(docente)
     #alumnos = list(alumnos)#para asegurarse de ....
     #alumno = alumnos[0]
     #docente = docente[0]
-    #DETERMINAR SI ES ALUMNO O DOCENTE PARA MOSTRAR UNA U OTRA VISTA.
-    src = '{}{}.{}'.format('\\media\\images\\', alumno.id, 'jpg')
-    return render(request,'visorAlumno.html',{'nombre':alumno.nombre, 'src':src})
+    #DETERMINAR SI ES ALUMNO O DOCENTE PARA MOSTRAR UNA U OTRA VISTA. HECHO
+    #COLOCAR DIRECCION DE LOS RECURSOS COMO CSS U IMAGENES, PARA QUE NO TE APARESCA COMO LINK
+    src = '{}{}.{}'.format('\\media\\images\\', persona.numeroRegistro, 'jpg')
 
+    
+    return render(request,'bienvenidoPersona.html',{'nombre':persona.nombre, 
+                'src':src, 'bienvenido': bienvenido})

@@ -14,8 +14,9 @@ class Persona(models.Model):
     fechaNac=models.DateField()
     celular=models.CharField(max_length=20,blank=True)
     mail=models.EmailField(max_length=30, blank=True)
-    imagen=models.ImageField(upload_to='images', null=True, default=None)
+    numeroRegistro=models.IntegerField(unique=True)
 
+    imagen=models.ImageField(upload_to='images', null=True, default=None)
 class Alumno(Persona):
     pass
 
@@ -38,6 +39,7 @@ class Docente(models.Model):
    celular=models.CharField(max_length=20,blank=True)
    mail=models.EmailField(max_length=30, blank=True)
    categoria=models.CharField(max_length=50, blank=True)
+   numeroRegistro=models.IntegerField(unique=True)
    imagen=models.ImageField(upload_to='images', null=True, default=None)
 class Ingreso(models.Model):
    numRegistro=models.IntegerField()
