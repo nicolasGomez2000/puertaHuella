@@ -29,5 +29,5 @@ def visor(request):
     src = '{}{}.{}'.format('\\media\\images\\', persona.numeroRegistro, 'jpg')
 
     
-    return render(request,'bienvenidoPersona.html',{'nombre':persona.nombre, 
+    return render(request,'bienvenidoPersona.html',{'nombre':persona.nombre,'apellido':persona.apellido, 
                 'src':src, 'bienvenido': bienvenido})

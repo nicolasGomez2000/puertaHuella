@@ -106,7 +106,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 TEMPLATE_DIRS = (
-    'C:/Python27/Lib/site-packages/ejemplos/puertaHuella/templates'.replace('\\','/'), 
+    #'C:/Python27/Lib/site-packages/ejemplos/puertaHuella/templates'.replace('\\','/'), 
     os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
 )
 
