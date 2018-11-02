@@ -13,10 +13,10 @@ def visor(request):
     if ingreso:
         persona = Alumno.objects.filter(numeroRegistro=ingreso.numRegistro).first()
     if persona:
-        bienvenido = "alumno"
+        bienvenido = "Alumno"
     else:
         persona = Docente.objects.filter(numeroRegistro=ingreso.numRegistro).first()
-        bienvenido = "docente"
+        bienvenido = "Docente"
 
     #alumnos = Alumno.objects.filter(dni=32434)
     #docente =  Docente.objects.filter(dni=1234)

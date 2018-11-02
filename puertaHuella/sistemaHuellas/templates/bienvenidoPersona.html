@@ -1,9 +1,10 @@
 {%extends "index.html"%}
-{%block tipo%} <div class="visor">
-        <h2 class="titulo"> 
-            Nombre del {{bienvenido}}: {{nombre}} {{apellido}}
-        </h2>
-        <hr>
-        <p><img id="img"src={{src}} /></p>
-    </div>
+{%block tipo%} 
+    <header>
+        <center>
+            <h2>Bienvenido </h2>
+            <p> {{bienvenido}}: {{nombre}} {{apellido}}</p>
+         </center>
+    </header>
+    <span class="image"><img src={{src}} alt=""  /></span>
 {%endblock%}
